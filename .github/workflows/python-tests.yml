@@ -26,12 +26,14 @@ jobs:
 
     - name: Install dependencies
       run: |
-        if [ -f requirements.txt ]; then
+        if Test-Path requirements.txt; then (
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-        else
+        ) else (
           echo "No requirements.txt file found, skipping dependencies installation."
+        )
         fi
+      shell: bash
 
 
     - name: Run tests
