@@ -1,4 +1,5 @@
 import unittest
+from soma_lista import soma_lista
 
 class TestSomaLista(unittest.TestCase):
     def test_soma_positivos(self):
